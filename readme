@@ -1,0 +1,76 @@
+# Expense Sharing App 💸
+
+Une application web dont **l’objectif principal est de gérer efficacement un budget personnel ou partagé**.  
+En bonus, elle permettras de collaborer avec d’autres utilisateurs pour suivre les dépenses communes (colocataires, couples, amis).
+
+---
+
+## 🚀 Objectif du projet
+
+- **Gestion de budget** : suivre les dépenses, catégoriser, équilibrer les comptes.  
+- **Fonctionnalités collaboratives** : partager un budget ou des dépenses avec d’autres utilisateurs.  
+- Calcul automatique des dettes et soldes entre utilisateurs si plusieurs personnes participent.  
+- Interface frontend et API backend robustes et sécurisées.  
+- Authentification complète avec JWT pour sécuriser les routes.  
+- Export des données (CSV/PDF) et visualisation avec des graphiques.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend :** Node.js, Express  
+- **Base de données :** PostgreSQL  
+- **Sécurité :** JWT, bcrypt  
+- **Frontend :** (à venir) React ou autre framework JS  
+- **Tests :** unitaires et d’intégration  
+- **Documentation :** Swagger  
+- **Sans ORM** : SQL pur avec postgres  
+
+---
+
+## 🔧 Fonctionnalités prévues
+
+### Gestion de budget 
+- Créer, modifier et supprimer ses propres dépenses
+- Catégoriser les dépenses (loyer, courses, loisirs…)  
+- Visualiser les soldes et le budget restant  
+- Export PDF/CSV  
+- Graphiques par catégorie ou par utilisateur
+
+### Fonctionnalités collaboratives 
+- Créer des groupes d’utilisateurs (colocs, couples…)  
+- Partager des dépenses entre membres  
+- Calcul automatique des dettes et équilibrage des comptes  
+
+### Authentification & sécurité
+- Register / Login avec validation et hash des mots de passe  
+- JWT pour sécuriser les routes  
+- Middleware pour protéger les endpoints
+
+### Bonus techniques
+- Tests unitaires backend 
+- Documentation API via Swagger  
+- Frontend simple et réactif  
+
+---
+
+## 🗂️ Structure du projet
+
+```text
+expense-sharing-app/
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── repositories/
+│   │   ├── routes/
+│   │   ├── middlewares/
+│   │   ├── db/
+│   │   └── utils/
+│   ├── migrations/
+│   ├── tests/
+│   ├── .env.example
+│   └── package.json
+├── frontend/
+├── docs/
+└── README.md
