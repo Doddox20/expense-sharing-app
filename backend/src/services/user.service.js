@@ -7,6 +7,9 @@ const userService = {
   async getUserById(id) {
     return userRepository.findById(id);
   },
+  async getUserByEmail(email) {
+    return userRepository.findByEmail(email);
+  },
   async createUser(user) {
     return userRepository.create(user);
   },
