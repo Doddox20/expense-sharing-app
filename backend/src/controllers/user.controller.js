@@ -19,6 +19,15 @@ const userController = {
         res.status(500).json({ error: 'Database error', details: err.message });
         }
     },
+    async getUserByEmail(req, res) {
+        try {
+        const user = await userService.getUserByEmail(req.params.email);
+        res.json(user);
+        } catch (err) {
+        console.error('DB ERROR:', err);
+        res.status(500).json({ error: 'Database error', details: err.message });
+        }
+    },
     async createUser(req, res) {
         try {
         const newUser = await userService.createUser(req.body);
