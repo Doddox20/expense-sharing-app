@@ -40,11 +40,7 @@ class AuthService {
         }
 
         // créer token
-        const token = jwt.sign(
-            { userId: user.id },
-            JWT_SECRET,
-            { expiresIn: '1d' }
-        );
+        const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
         return { token };
     }
