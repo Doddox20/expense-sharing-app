@@ -56,7 +56,6 @@ En bonus, elle permettras de collaborer avec d’autres utilisateurs pour suivre
 
 ## 🗂️ Structure du projet
 
-```text
 expense-sharing-app/
 ├── backend/
 │   ├── src/
@@ -74,3 +73,76 @@ expense-sharing-app/
 ├── frontend/
 ├── docs/
 └── README.md
+
+## 🧱 Base de données (modélisation)
+
+Le projet repose sur une base de données relationnelle PostgreSQL conçue pour gérer des dépenses personnelles et collaboratives.
+
+### Tables principales
+
+####  Users
+Stocke les utilisateurs de l’application.
+
+- `id` : identifiant unique  
+- `username` : nom d’utilisateur  
+- `email` : email unique  
+- `password` : mot de passe hashé  
+- `created_at` : date de création  
+
+---
+
+####  Groups
+Représente un groupe de dépenses (colocation, couple, etc.).
+
+- `id`  
+- `name`  
+- `created_by` → référence vers `users.id`  
+- `created_at`  
+
+---
+
+####  Memberships
+Table de liaison entre utilisateurs et groupes.
+
+- `id`  
+- `user_id` → référence vers `users.id`  
+- `group_id` → référence vers `groups.id`  
+- `role` (member, admin)  
+- `created_at`  
+
+ Un utilisateur peut appartenir à plusieurs groupes.
+
+---
+
+####  Expenses
+Représente une dépense dans un groupe.
+
+- `id`  
+- `group_id` → référence vers `groups.id`  
+- `paid_by` → référence vers `users.id`  
+- `amount`  
+- `description`  
+- `created_at`  
+
+---
+
+####  Expense Splits
+Permet de répartir une dépense entre plusieurs utilisateurs.
+
+- `id`  
+- `expense_id` → référence vers `expenses.id`  
+- `user_id` → référence vers `users.id`  
+- `amount`  
+
+ Permet de calculer précisément qui doit combien à qui.
+
+---
+
+###  Relations clés
+
+- Un **user** peut appartenir à plusieurs **groups**
+- Un **group** contient plusieurs **expenses**
+- Une **expense** est payée par un user
+- Une **expense** est répartie via plusieurs **expense_splits**
+
+---
