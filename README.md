@@ -56,6 +56,7 @@ En bonus, elle permettras de collaborer avec d’autres utilisateurs pour suivre
 
 ## 🗂️ Structure du projet
 
+```text
 expense-sharing-app/
 ├── backend/
 │   ├── src/
