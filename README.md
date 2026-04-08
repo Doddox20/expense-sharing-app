@@ -75,6 +75,8 @@ expense-sharing-app/
 ├── docs/
 └── README.md
 
+```
+
 ## 🧱 Base de données (modélisation)
 
 Le projet repose sur une base de données relationnelle PostgreSQL conçue pour gérer des dépenses personnelles et collaboratives.
