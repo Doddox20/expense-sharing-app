@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import userController from './controllers/user.controller.js';
 import authRoutes from './routes/auth.routes.js';
+import groupRoutes from './routes/group.routes.js';
 import authMiddleware from './middlewares/auth.middleware.js';
 
 dotenv.config();
@@ -9,6 +10,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use('/api/auth', authRoutes);
+app.use('/api/groups', groupRoutes);
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
