@@ -41,6 +41,13 @@ class GroupRepository {
         );
         return result.rows[0];
     }
+    async findById(groupId) {
+        const result = await pool.query(
+            `SELECT * FROM groups WHERE id = $1`,
+            [groupId]
+        );
+        return result.rows[0];
+    }
 }
 
 export default new GroupRepository();
